@@ -1,6 +1,6 @@
 # YouTuned
 
-**A premium Chrome extension that removes distractions from YouTube—recommendations, Shorts, autoplay, and comments—while preserving search and subscriptions.**
+**A Chrome extension that removes distractions from YouTube—recommendations, Shorts, autoplay, and comments—while preserving search and subscriptions.**
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-green)](https://chrome.google.com/webstore)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)](https://developer.chrome.com/docs/extensions/mv3/)
@@ -108,6 +108,6 @@ MIT License — see [LICENSE](LICENSE)
 
 ---
 
-**YouTuned** — Focus on what matters. Filter the rest.
+**YouTuned** — Watch what matters. Filter the rest.
 
 *Not affiliated with Google or YouTube. All trademarks belong to their respective owners.* 
