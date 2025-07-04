@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Intention Filter",
+  "version": "1.0.0",
+  "description": "Usuwa rekomendacje, Shorts i autoplay na YouTube, zachowując wyszukiwanie i subskrypcje. Działa lokalnie, nie zbiera danych osobowych.",
+  "author": "YouTube Intention Filter Team",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://youtube.com/*"
+      ],
+      "js": ["content/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "YouTube Intention Filter",
+    "default_icon": "assets/icon.svg"
+  },
+  "icons": {
+    "16": "assets/icon.svg",
+    "48": "assets/icon.svg",
+    "128": "assets/icon.svg"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["https://www.youtube.com/*", "https://youtube.com/*"]
+    }
+  ]
+} 

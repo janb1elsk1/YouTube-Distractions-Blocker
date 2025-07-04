@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Intention Filter</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="../assets/icon.svg" alt="Logo" class="logo-img">
+                <h1 class="title">YouTube Intention Filter</h1>
+            </div>
+            <p class="subtitle">Filter YouTube, preserve intention</p>
+        </header>
+
+        <!-- Settings -->
+        <main class="settings">
+            <div class="setting-group">
+                <h2 class="settings-title">Filter Settings</h2>
+                
+                <!-- Hide recommendations -->
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label for="hideRecommendations" class="setting-label">
+                            Hide recommendations
+                        </label>
+                        <p class="setting-description">
+                            Removes sidebar with recommendations, end screen cards and related videos
+                        </p>
+                    </div>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="hideRecommendations" class="toggle-input" checked>
+                        <label for="hideRecommendations" class="toggle-label" role="switch" aria-checked="true">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Hide Shorts -->
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label for="hideShorts" class="setting-label">
+                            Hide Shorts
+                        </label>
+                        <p class="setting-description">
+                            Removes Shorts sections from homepage and navigation
+                        </p>
+                    </div>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="hideShorts" class="toggle-input" checked>
+                        <label for="hideShorts" class="toggle-label" role="switch" aria-checked="true">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Disable autoplay -->
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label for="disableAutoplay" class="setting-label">
+                            Disable autoplay
+                        </label>
+                        <p class="setting-description">
+                            Disables automatic playback of next videos
+                        </p>
+                    </div>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="disableAutoplay" class="toggle-input" checked>
+                        <label for="disableAutoplay" class="toggle-label" role="switch" aria-checked="true">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Hide comments -->
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label for="hideComments" class="setting-label">
+                            Hide comments
+                        </label>
+                        <p class="setting-description">
+                            Hides comment section under videos (optional)
+                        </p>
+                    </div>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="hideComments" class="toggle-input">
+                        <label for="hideComments" class="toggle-label" role="switch" aria-checked="false">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Status -->
+        <div class="status" id="status">
+            <div class="status-indicator">
+                <span class="status-dot active"></span>
+                <span class="status-text">Active on YouTube</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <details class="about-section">
+                <summary class="about-summary">
+                    <span class="about-icon">ℹ️</span>
+                    About the extension
+                </summary>
+                <div class="about-content">
+                    <h3>YouTube Intention Filter</h3>
+                    <p>The extension removes recommendations, Shorts and autoplay from YouTube while preserving search and subscriptions.</p>
+                    
+                    <h4>🔒 Privacy and security</h4>
+                    <ul>
+                        <li>We don't collect any personal data</li>
+                        <li>Works entirely locally in the browser</li>
+                        <li>Doesn't send data to external servers</li>
+                        <li>Minimal permissions - YouTube only</li>
+                    </ul>
+                    
+                    <h4>⚖️ Legal compliance</h4>
+                    <ul>
+                        <li>Extension doesn't violate YouTube ToS</li>
+                        <li>Doesn't modify content, only hides UI elements</li>
+                        <li>Preserves all search functionality</li>
+                        <li>Doesn't block ads or bypass restrictions</li>
+                    </ul>
+                    
+                    <h4>🛠️ Technologies</h4>
+                    <ul>
+                        <li>Manifest V3 - latest Chrome standard</li>
+                        <li>MutationObserver - efficient change detection</li>
+                        <li>Chrome Storage API - secure storage</li>
+                        <li>WCAG 2.1 - full accessibility</li>
+                    </ul>
+                </div>
+            </details>
+            
+            <div class="version">
+                <span>Version 1.0.0</span>
+                <a href="https://github.com/youtube-intention-filter" target="_blank" rel="noopener" class="github-link">
+                    GitHub
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
