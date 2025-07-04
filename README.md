@@ -108,6 +108,6 @@ MIT License — see [LICENSE](LICENSE)
 
 ---
 
-**YouTuned** — Focus on what matters. Filter the rest.
+**YouTuned** — Watch what matters. Filter the rest.
 
 *Not affiliated with Google or YouTube. All trademarks belong to their respective owners.* 
