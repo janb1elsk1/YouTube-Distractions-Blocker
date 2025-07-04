@@ -1,6 +1,6 @@
 # YouTuned
 
-**A premium Chrome extension that removes distractions from YouTube—recommendations, Shorts, autoplay, and comments—while preserving search and subscriptions.**
+**A premium Chrome extension that removes distractions from YouTube—recommendations, Shorts, and comments—while preserving search and subscriptions.**
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-green)](https://chrome.google.com/webstore)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)](https://developer.chrome.com/docs/extensions/mv3/)
@@ -10,7 +10,7 @@
 ## ✨ What is YouTuned?
 
 YouTuned is a distraction filter for YouTube with a **master power switch** and a modern, glassmorphism UI. It lets you:
-- Remove recommendations, Shorts, autoplay, and comments
+- Remove recommendations, Shorts, and comments
 - Keep search and subscriptions untouched
 - Control all filtering with a single, beautiful master switch
 - Enjoy a privacy-first, zero-data-collection experience
