@@ -1,199 +1,113 @@
-# YouTube Intention Filter
+# YouTuned
 
-**A Chrome extension that removes recommendations, Shorts, and autoplay from YouTube while preserving search and subscriptions.**
+**A premium Chrome extension that removes distractions from YouTube—recommendations, Shorts, autoplay, and comments—while preserving search and subscriptions.**
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-green)](https://chrome.google.com/webstore)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)](https://developer.chrome.com/docs/extensions/mv3/)
-[![Privacy](https://img.shields.io/badge/Privacy-No%20Data%20Collection-green)](https://github.com/youtube-intention-filter)
+[![Privacy](https://img.shields.io/badge/Privacy-No%20Data%20Collection-green)](PRIVACY.md)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-## 🎯 Purpose
+## ✨ What is YouTuned?
 
-YouTube Intention Filter helps maintain intention while browsing YouTube by:
+YouTuned is a distraction filter for YouTube with a **master power switch** and a modern, glassmorphism UI. It lets you:
+- Remove recommendations, Shorts, autoplay, and comments
+- Keep search and subscriptions untouched
+- Control all filtering with a single, beautiful master switch
+- Enjoy a privacy-first, zero-data-collection experience
 
-- **Removing recommendations** - sidebar, end screen cards, related videos
-- **Hiding Shorts** - Shorts sections from homepage and navigation
-- **Disabling autoplay** - automatic playback of next videos
-- **Optional comment hiding** - for an even cleaner interface
+## 🎨 Features
 
-The extension **does not block ads** or **bypass restrictions** - it only hides UI elements while preserving all search and subscription functionality.
+- **Master Power Switch** — Instantly enable/disable all filtering
+- **Individual Filters** — Hide recommendations, Shorts, comments (optional)
+- **Premium Glassmorphism UI** — Modern, responsive, and beautiful
+- **Animated Feedback** — Modern toasts for every action
+- **About Modal** — High-quality, glassy About page with privacy and legal info
+- **Dark/Light Mode** — Adapts to your system
+- **No Data Collection** — 100% local, privacy-first
 
-## ✨ Features
+## 🖼️ Screenshots
 
-### 🔧 Settings
-- **Hide recommendations** - removes sidebar with recommendations, end screen cards and related videos
-- **Hide Shorts** - removes Shorts sections from homepage and navigation
-- **Disable autoplay** - disables automatic playback of next videos
-- **Hide comments** - hides comment section under videos (optional)
-
-### 🎨 Interface
-- **Minimalist popup** with toggles
-- **Dark mode** - automatic adaptation to system preferences
-- **Responsive design** - works on all screen sizes
-- **Full accessibility** - WCAG 2.1 compliance, keyboard support
-
-### 🔒 Security and privacy
-- **No personal data collection** - works entirely locally
-- **Minimal permissions** - YouTube only
-- **Manifest V3** - latest security standard
-- **Open source** - full code transparency
+- **Popup:** Modern glassmorphism, master switch, and toggles
+- **About Modal:** Premium, glassy, privacy-focused
+- **YouTube:** Clean interface, no recommendations or Shorts
 
 ## 🚀 Installation
 
-### From Chrome Web Store (Recommended)
+**From Chrome Web Store:**
 1. Go to [Chrome Web Store](https://chrome.google.com/webstore)
-2. Search for "YouTube Intention Filter"
+2. Search for "YouTuned"
 3. Click "Add to Chrome"
-4. Confirm installation
 
-### Local installation (For developers)
-1. Download or clone the repository
-2. Open Chrome and go to `chrome://extensions/`
+**Local installation (for developers):**
+1. Clone or download this repo
+2. Go to `chrome://extensions/` in Chrome
 3. Enable "Developer mode"
-4. Click "Load unpacked"
-5. Select the extension folder
+4. Click "Load unpacked" and select the extension folder
 
 ## 📖 Usage
 
-1. **Install the extension** according to the instructions above
-2. **Go to YouTube** - the extension automatically activates
-3. **Click the extension icon** in Chrome toolbar
-4. **Customize settings** according to preferences:
-   - Enable/disable individual filters
-   - Changes are automatically saved
-   - Settings sync between devices
+1. **Go to YouTube** — YouTuned activates automatically
+2. **Click the extension icon** — Open the popup
+3. **Use the master switch** — Instantly enable/disable all filtering
+4. **Toggle individual filters** — Customize your experience
+5. **Open the About modal** — See privacy and legal info in a premium glass UI
 
-### Usage examples
+## 🔒 Privacy & Security
 
-#### Scenario 1: Focus on a specific video
-- Enable "Hide recommendations" and "Disable autoplay"
-- Watch the video without distracting elements
-- Maintain full control over playback
+- **No personal data collected** — All settings are local
+- **No tracking, no analytics, no cookies**
+- **Minimal permissions** — YouTube only
+- **Manifest V3** — Latest Chrome security standard
+- **Open source** — Full code transparency
 
-#### Scenario 2: Browsing subscriptions
-- Enable "Hide Shorts" and "Hide recommendations"
-- Focus on videos from subscriptions
-- Avoid accidentally clicking on recommendations
-
-#### Scenario 3: Reading comments
-- Disable "Hide comments" (disabled by default)
-- Keep access to comments when needed
-
-## 🛠️ Technologies
-
-- **Manifest V3** - latest Chrome Extensions standard
-- **MutationObserver** - efficient DOM change detection
-- **Chrome Storage API** - secure settings storage
-- **CSS Variables** - easy style management
-- **ES6+ JavaScript** - modern code
-- **WCAG 2.1** - full accessibility
-
-## 🔧 Project Structure
+## ⚡ Project Structure
 
 ```
 youtubefilter-chrome-extension/
-├── manifest.json              # Extension configuration
+├── manifest.json              # Extension config
 ├── content/
-│   └── content.js             # Content script - DOM modification
+│   └── content.js             # Content script (filter logic)
 ├── popup/
 │   ├── popup.html             # Popup UI
 │   ├── popup.js               # Popup logic
 │   └── popup.css              # Popup styles
 ├── utils/
-│   └── storage.js             # Storage helper functions
+│   └── storage.js             # Storage helpers
 ├── assets/
 │   └── icon.svg               # Extension icon
-└── README.md                  # Documentation
+├── README.md                  # Documentation
+├── PRIVACY.md                 # Privacy policy
+└── ...                        # Other docs
 ```
 
+## 🛠️ Technologies
+- **Manifest V3**
+- **Glassmorphism CSS**
+- **MutationObserver**
+- **Chrome Storage API**
+- **ES6+ JavaScript**
+
 ## 🧪 Testing
+- Install locally, open YouTube, and test all toggles and the master switch
+- Open the About modal to verify privacy and legal info
 
-### Local testing
-1. Install the extension locally (see Installation section)
-2. Open YouTube in a new tab
-3. Check if filters work correctly
-4. Test different YouTube pages (homepage, video, channel)
+## 📋 Security Checklist
+- ✅ No personal data collection
+- ✅ Minimal permissions (YouTube only)
+- ✅ Manifest V3
+- ✅ Content Security Policy
+- ✅ Does not block ads or bypass restrictions
 
-### Debugging
-1. Open DevTools (F12)
-2. Go to "Console" tab
-3. Check extension logs (prefix: "YouTube Intention Filter")
-4. Use "Sources" to debug content script
-
-### Testing settings
-1. Change settings in popup
-2. Check if changes are saved
-3. Refresh page - settings should be preserved
-4. Test on different devices (synchronization)
-
-## 📋 Security checklist
-
-- ✅ **No personal data collection**
-- ✅ **Works entirely locally**
-- ✅ **Minimal permissions** (YouTube only)
-- ✅ **Manifest V3** - latest standard
-- ✅ **Content Security Policy** - security
-- ✅ **Does not modify content** - only hides UI elements
-- ✅ **Preserves search functionality**
-- ✅ **Does not block ads**
-- ✅ **Does not bypass restrictions**
-
-## ⚖️ Legal compliance
-
-### YouTube Terms of Service
-- ✅ **Does not violate ToS** - only hides UI elements
-- ✅ **Does not bypass restrictions** - preserves all YouTube mechanisms
-- ✅ **Does not modify content** - does not change videos or descriptions
-- ✅ **Does not block ads** - ads remain visible
-
-### Chrome Web Store Policy
-- ✅ **Clear functionality description**
-- ✅ **Minimal permissions**
-- ✅ **Secure code**
-- ✅ **Manifest V3 compliance**
-
-## 🤝 Contributing
-
-### Reporting bugs
-1. Check if the issue is already reported
-2. Create a new issue with problem description
-3. Include information about:
-   - Chrome version
-   - Extension version
-   - Steps to reproduce
-   - Screenshots (if needed)
-
-### Proposing features
-1. Check if the feature is not already planned
-2. Create an issue with feature description
-3. Explain benefits for users
-4. Consider implementing it yourself
-
-### Pull Requests
-1. Fork the repository
-2. Create a branch for your feature
-3. Add tests if possible
-4. Describe changes in PR
+## ⚖️ Legal Compliance
+- ✅ YouTube ToS compliant (only hides UI)
+- ✅ Chrome Web Store Policy compliant
+- ✅ GDPR/CCPA compliant (no data collection)
 
 ## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Chrome Extensions Team** for Manifest V3
-- **YouTube** for providing the API
-- **Open source community** for inspiration
-- **Users** for feedback and suggestions
-
-## 📞 Contact
-
-- **GitHub**: [youtube-intention-filter](https://github.com/youtube-intention-filter)
-- **Issues**: [GitHub Issues](https://github.com/youtube-intention-filter/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/youtube-intention-filter/discussions)
+MIT License — see [LICENSE](LICENSE)
 
 ---
 
-**YouTube Intention Filter** - Preserve intention, filter distractions.
+**YouTuned** — Focus on what matters. Filter the rest.
 
-*The extension is not affiliated with Google or YouTube. All trademarks belong to their respective owners.* 
+*Not affiliated with Google or YouTube. All trademarks belong to their respective owners.* 

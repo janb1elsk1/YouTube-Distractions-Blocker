@@ -1,22 +1,70 @@
 <svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="64" cy="64" r="60" fill="#007bff" stroke="#0056b3" stroke-width="2"/>
+  <defs>
+    <!-- Modern gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="4" result="offset"/>
+      <feFlood flood-color="#000000" flood-opacity="0.2"/>
+      <feComposite in2="offset" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      <feComposite in2="SourceGraphic" operator="over"/>
+    </filter>
+  </defs>
   
-  <!-- YouTube play button -->
-  <rect x="40" y="35" width="48" height="58" rx="8" fill="#ffffff" opacity="0.9"/>
-  <polygon points="52,45 52,83 88,64" fill="#007bff"/>
+  <!-- Background with modern gradient and shadow -->
+  <circle cx="64" cy="64" r="60" fill="url(#bgGradient)" stroke="url(#accentGradient)" stroke-width="2" filter="url(#dropShadow)"/>
   
-  <!-- Filter icon -->
+  <!-- Inner glow ring -->
+  <circle cx="64" cy="64" r="58" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.6" filter="url(#glow)"/>
+  
+  <!-- YouTube play button with modern styling -->
+  <rect x="40" y="35" width="48" height="58" rx="8" fill="rgba(255,255,255,0.95)" opacity="0.95" filter="url(#dropShadow)"/>
+  <polygon points="52,45 52,83 88,64" fill="url(#bgGradient)"/>
+  
+  <!-- Enhanced filter icon with gradient -->
   <path d="M 25 45 L 35 45 L 40 55 L 50 55 L 55 65 L 75 65 L 80 55 L 90 55 L 95 45 L 105 45" 
-        stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+        stroke="url(#successGradient)" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#glow)"/>
   
-  <!-- Intention arrow -->
+  <!-- Modern intention arrow -->
   <path d="M 85 25 L 95 25 L 95 35 M 90 30 L 95 35 L 90 40" 
-        stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        stroke="url(#accentGradient)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
   
-  <!-- Shield for security -->
+  <!-- Enhanced shield for security -->
   <path d="M 64 95 L 70 92 L 70 85 C 70 82 67 80 64 80 C 61 80 58 82 58 85 L 58 92 Z" 
-        fill="#ffffff" opacity="0.8"/>
+        fill="rgba(255,255,255,0.9)" opacity="0.9" filter="url(#dropShadow)"/>
   <path d="M 64 95 L 70 92 L 70 85 C 70 82 67 80 64 80 C 61 80 58 82 58 85 L 58 92 Z" 
-        stroke="#007bff" stroke-width="1" fill="none"/>
+        stroke="url(#accentGradient)" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+  
+  <!-- Modern accent dots -->
+  <circle cx="25" cy="25" r="2" fill="url(#successGradient)" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="103" cy="25" r="2" fill="url(#accentGradient)" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="25" cy="103" r="2" fill="url(#accentGradient)" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="103" cy="103" r="2" fill="url(#successGradient)" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- Modern border accent -->
+  <circle cx="64" cy="64" r="62" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.3"/>
 </svg> 

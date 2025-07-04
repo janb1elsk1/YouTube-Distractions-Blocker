@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "autoplay=1",
+      "resourceTypes": ["main_frame", "sub_frame", "xmlhttprequest"]
+    }
+  }
+] 

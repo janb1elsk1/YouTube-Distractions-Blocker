@@ -13,6 +13,7 @@ class YouTubeFilter {
       hideComments: false
     };
     
+    this.masterEnabled = true; // Master power switch
     this.observer = null;
     this.isInitialized = false;
     
@@ -51,7 +52,8 @@ class YouTubeFilter {
         'hideRecommendations',
         'hideShorts', 
         'disableAutoplay',
-        'hideComments'
+        'hideComments',
+        'masterEnabled'
       ]);
       
       this.settings = {
@@ -60,6 +62,8 @@ class YouTubeFilter {
         disableAutoplay: result.disableAutoplay !== false,
         hideComments: result.hideComments === true
       };
+      
+      this.masterEnabled = result.masterEnabled !== false;
     } catch (error) {
       console.warn('YouTube Intention Filter: Cannot load settings, using defaults');
     }
@@ -70,16 +74,20 @@ class YouTubeFilter {
    */
   handleSettingsChange(changes) {
     let hasChanges = false;
-    
     Object.keys(changes).forEach(key => {
       if (this.settings.hasOwnProperty(key)) {
         this.settings[key] = changes[key].newValue;
         hasChanges = true;
+      } else if (key === 'masterEnabled') {
+        this.masterEnabled = changes[key].newValue;
+        hasChanges = true;
       }
     });
-    
+    if (!this.masterEnabled) {
+      this.clearFilters();
+      return;
+    }
     if (hasChanges) {
-      // Clear previous filters before applying new ones
       this.clearFilters();
       this.applyFilters();
     }
@@ -93,7 +101,18 @@ class YouTubeFilter {
       const { setting, value } = message;
       if (this.settings.hasOwnProperty(setting)) {
         this.settings[setting] = value;
-        // Clear previous filters before applying new ones
+        if (!this.masterEnabled) {
+          this.clearFilters();
+          return;
+        }
+        this.clearFilters();
+        this.applyFilters();
+      } else if (setting === 'masterEnabled') {
+        this.masterEnabled = value;
+        if (!this.masterEnabled) {
+          this.clearFilters();
+          return;
+        }
         this.clearFilters();
         this.applyFilters();
       }
@@ -152,18 +171,16 @@ class YouTubeFilter {
    * Applies filters based on current settings
    */
   applyFilters() {
+    if (!this.masterEnabled) {
+      this.clearFilters();
+      return;
+    }
     if (this.settings.hideRecommendations) {
       this.hideRecommendations();
     }
-    
     if (this.settings.hideShorts) {
       this.hideShorts();
     }
-    
-    if (this.settings.disableAutoplay) {
-      this.disableAutoplay();
-    }
-    
     if (this.settings.hideComments) {
       this.hideComments();
     }
@@ -272,30 +289,6 @@ class YouTubeFilter {
       if (entry && !entry.dataset.yifHidden) {
         entry.style.display = 'none';
         entry.dataset.yifHidden = 'true';
-      }
-    });
-  }
-
-  /**
-   * Disables autoplay
-   */
-  disableAutoplay() {
-    // Disable autoplay in player
-    const player = document.querySelector('video');
-    if (player) {
-      player.autoplay = false;
-      player.muted = false;
-    }
-    
-    // Disable autoplay toggle
-    const autoplayToggles = document.querySelectorAll('ytd-toggle-button-renderer');
-    autoplayToggles.forEach(toggle => {
-      const button = toggle.querySelector('button');
-      if (button && (button.getAttribute('aria-label')?.includes('autoplay') || 
-                     button.getAttribute('aria-label')?.includes('Autoplay'))) {
-        if (button.getAttribute('aria-pressed') === 'true') {
-          button.click();
-        }
       }
     });
   }

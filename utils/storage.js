@@ -8,7 +8,6 @@ class StorageManager {
     this.defaultSettings = {
       hideRecommendations: true,
       hideShorts: true,
-      disableAutoplay: true,
       hideComments: false
     };
     
